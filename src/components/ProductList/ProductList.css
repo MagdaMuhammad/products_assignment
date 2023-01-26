@@ -1,0 +1,83 @@
+.productContainer{
+    margin: 1rem 0;
+    padding: 1rem 0;
+    min-height: 64vh;
+}
+
+ul{
+    display: flex;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    justify-content: space-evenly; 
+    gap:4%;
+
+    list-style: none;
+    padding: 0;
+}
+
+li{
+
+    border: thin solid;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 0.5rem;
+    margin-bottom: 5%;
+    width: 70%;
+    max-width: 90%;
+    text-align: center;
+}
+
+.checkbox{
+    float: left;
+    -webkit-appearance: none;
+    background-color: #fafafa;
+    border: 1px solid #cacece;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+    padding: 9px;
+    border-radius: 3px;
+	display: inline-block;
+	position: relative;
+
+}
+
+.checkbox:active, .checkbox:checked:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.checkbox:checked {
+	background-color: #e9ecee;
+	border: 1px solid #adb8c0;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	color: #99a1a7;
+}
+
+.checkbox:checked:after {
+	content: '\2714';
+	font-size: 14px;
+    font-weight: bold;
+	position: absolute;
+	top: 0px;
+	left: 3px;
+	color: red;
+}
+
+@media only screen and ( width>500px ) {
+    ul{
+        padding: 0 1rem;
+    }
+
+    li{
+        width: 40%;
+    }
+}
+
+@media only screen and ( width>700px ) {
+    li{
+        width: 25%;
+    }
+}
+
+@media only screen and ( width>1000px) {
+    li{
+        width: 20%;
+    }
+}

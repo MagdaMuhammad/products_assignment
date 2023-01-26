@@ -1,0 +1,19 @@
+html { 
+    background: url('images/pexels-suzy-hazelwood-1629236.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    margin: auto;
+    font-family: 'Courgette', cursive;
+    color: #102234;
+
+    max-width: 95%;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
