@@ -12,6 +12,7 @@ class ProductList extends Component {
 
     state = {
         products: [],
+        skus: [],
         selected: []
     }
 
@@ -20,23 +21,43 @@ class ProductList extends Component {
         .then((products)=>{
             this.setState(()=>({
                 products: products.data,
+                skus: products.data.map(pro => pro.SKU),
                 selected: []
             }))
         })
     }
 
-    MassDeleteHandler = () => {
+    checkboxChangeHandler = (id) => {
+        let selectedArr = this.state.selected;
+        selectedArr.includes(id) ? selectedArr = selectedArr.filter( item => item !== id ) : selectedArr.push(id) ;
 
+        this.setState(()=>({
+            selected: selectedArr
+        }))
     }
 
-    checkboxChangeHandler = (id) => {
+    MassDeleteHandler = e => {
+        e.preventDefault();
+        let deletedList = this.state.selected;
 
+        ProductAPI.massDelete(deletedList.join())
+        .then(()=>{
+            let products = this.state.products;
+            let newProducts = products.filter( product => ! deletedList.includes(product.id) );
+            let newskus     = products.map( product => product.SKU );
+
+            this.setState(()=>({
+                products: newProducts,
+                skus: newskus,
+                selected: []
+            }))
+        })
     }
 
 
     render(){
         const buttons = [
-            {button: <Link to="/add-product"><button type="button"> ADD</button></Link>},
+            {button: <Link to="/add-product" state={{ skus: this.state.skus }}><button type="button"> ADD</button></Link>},
             {button: <button onClick={this.MassDeleteHandler} type="button"> MASS DELETE</button>}
         ]
 

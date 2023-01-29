@@ -1,9 +1,14 @@
 
 const Product = props => {
 
+    const handleCheckboxChange = () => {
+        props.onCheck(props.product.id);
+    }
+
+
     return(
         <li>
-            <input type="checkbox" className='delete-checkbox checkbox' onChange={props.onCheck(props.product.id)}/>
+            <input type="checkbox" className='delete-checkbox checkbox' onChange={handleCheckboxChange}/>
             <br />
 
             <p>{props.product.SKU}</p>

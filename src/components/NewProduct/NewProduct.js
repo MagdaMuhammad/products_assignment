@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+
 import * as ProductAPI from '../ProductAPI';
 
 import './NewProduct.css';
@@ -7,13 +8,15 @@ import Header from '../UI/Header';
 import Error from '../UI/Error';
 
 
-const NewProduct = () => {
+const NewProduct = props => {
 
     const [type, setType] = useState();
     const [error, setError] = useState();   
     
     const navigate = useNavigate();
-
+    const location = useLocation()
+    const { skus } = location.state
+  
     const SKURef   = useRef();
     const nameRef  = useRef();
     const priceRef = useRef();
@@ -41,24 +44,27 @@ const NewProduct = () => {
         const widthInput  = typeInput === "Furniture"? widthRef.current.value  : null;
         const lengthInput = typeInput === "Furniture"? lengthRef.current.value : null;
         const weightInput = typeInput === "Book"? weightRef.current.value : null;
-        
 
         if(SKUInput.trim().length === 0 || nameInput.trim().length === 0 || priceInput.trim().length === 0 || 
         (typeInput === "DVD" && sizeInput.trim().length === 0) || 
         (typeInput === "Book" && weightInput.trim().length === 0) || 
         (typeInput === "Furniture" && (heightInput.trim().length === 0 || widthInput.trim().length === 0 || lengthInput.trim().length === 0)) ){
-            setError(prevState => ({
-                ...prevState,
+            setError(() => ({
                 title: 'All fields are mandatory for submission!',
                 msg: 'Please, submit required data',
             }))
             return;
         }
 
-        // 
-        //
         //check on unique SKU
-        //
+        if( skus.includes(SKUInput) ){
+            console.log("not unique")
+            setError(() => ({
+                title: 'SKU Must be unique!',
+                msg: 'Please, submit a unique SKU for your product',
+            }))
+            return;
+        }
 
         let newProduct = {
             SKU: SKUInput,
@@ -72,8 +78,12 @@ const NewProduct = () => {
             weight: weightInput
         };
 
-        ProductAPI.addProduct(newProduct).then(res => {
+        ProductAPI.addProduct(newProduct)
+        .then(() => {
             navigate('/');
+        })
+        .catch( error => {
+            console.log(error);
         });
     }
 

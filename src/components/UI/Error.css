@@ -16,9 +16,13 @@
     box-shadow: 4px 8px 12px 0 rgba(0,0,0,0.4);
     text-align: center;
     animation: show-modal .7s ease-in-out;
+    
     position: absolute;
-    top: 35%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
+
 
 .modal-header {
     padding: 1rem;
