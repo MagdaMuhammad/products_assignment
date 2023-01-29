@@ -79,12 +79,10 @@ const NewProduct = props => {
         };
 
         ProductAPI.addProduct(newProduct)
-        .then(() => {
-            navigate('/products_assignment');
+        .then((res) => {
+            console.log(res)
+            //navigate('/products_assignment');
         })
-        .catch( error => {
-            console.log(error);
-        });
     }
 
     const errorHandler = () =>{
@@ -93,7 +91,7 @@ const NewProduct = props => {
 
     const buttons = [
         {button: <button onClick={saveNewProductHandler} type="submit"> Save</button>},
-        {button: <Link to="/"><button type="button" className='cancelBtn'> Cancel</button></Link>}
+        {button: <Link to="/products_assignment"><button type="button" className='cancelBtn'> Cancel</button></Link>}
     ]    
 
     return(
