@@ -80,7 +80,7 @@ const NewProduct = props => {
 
         ProductAPI.addProduct(newProduct)
         .then(() => {
-            navigate('/');
+            navigate('/products_assignment');
         })
         .catch( error => {
             console.log(error);

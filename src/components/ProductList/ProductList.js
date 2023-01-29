@@ -57,7 +57,7 @@ class ProductList extends Component {
 
     render(){
         const buttons = [
-            {button: <Link to="/add-product" state={{ skus: this.state.skus }}><button type="button"> ADD</button></Link>},
+            {button: <Link to="/products_assignment/add-product" state={{ skus: this.state.skus }}><button type="button"> ADD</button></Link>},
             {button: <button onClick={this.MassDeleteHandler} type="button"> MASS DELETE</button>}
         ]
 
