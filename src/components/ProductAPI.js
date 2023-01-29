@@ -8,7 +8,7 @@ export const getAll = () => {
 }
 
 export const addProduct = product => {
-    return axios.post(`${API_URL}/add.php`, product);
+    return axios.post(`${API_URL}/addNew.php`, product);
 }
 
 export const massDelete = ids => {
