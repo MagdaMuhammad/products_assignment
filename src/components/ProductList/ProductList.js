@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import * as ProductAPI from '../ProductAPI';
 
-import Header from '../UI/Header';
+// import Header from '../UI/Header';
 import Product from './Product';
 import './ProductList.css';
 
@@ -40,6 +40,8 @@ class ProductList extends Component {
         e.preventDefault();
         let deletedList = this.state.selected;
 
+        if(deletedList.length === 0) return;
+
         ProductAPI.massDelete(deletedList.join())
         .then(()=>{
             let products = this.state.products;
@@ -56,14 +58,16 @@ class ProductList extends Component {
 
 
     render(){
-        const buttons = [
-            {button: <button onClick={this.MassDeleteHandler} type="button" id="delete-product-button"> MASS DELETE</button>},
-            {button: <Link to="/products_assignment/add-product" state={{ skus: this.state.skus }}><button type="button"> ADD</button></Link>}
-        ]
 
         return(
             <>
-                <Header title="Products List" buttons={buttons} />
+                <div className='header'>
+                    <h2>{props.title}</h2>
+                    <div className="buttonSet">
+                        <button onClick={this.MassDeleteHandler} type="button" id="delete-product-button"> MASS DELETE</button>,
+                        <Link to="/products_assignment/add-product" state={{ skus: this.state.skus }}><button type="button"> ADD</button></Link>
+                    </div>
+                </div>
                 <div className='productContainer'>
                     <ul>
                         { this.state.products.length !==0 ? 
