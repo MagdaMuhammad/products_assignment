@@ -92,8 +92,8 @@ const NewProduct = props => {
     }
 
     const buttons = [
-        {button: <button onClick={saveNewProductHandler} type="submit"> Save</button>},
-        {button: <Link to="/products_assignment"><button type="button" className='cancelBtn'> Cancel</button></Link>}
+        {button: <button onClick={saveNewProductHandler} type="submit" value="save"> Save</button>},
+        {button: <Link to="/products_assignment"><button type="button" className='cancelBtn' value="cancel"> Cancel</button></Link>}
     ]    
 
     return(
