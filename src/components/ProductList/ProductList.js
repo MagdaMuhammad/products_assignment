@@ -62,10 +62,12 @@ class ProductList extends Component {
         return(
             <>
                 <div className='header'>
-                    <h2>{props.title}</h2>
+                    <h2>Products List</h2>
                     <div className="buttonSet">
-                        <button onClick={this.MassDeleteHandler} type="button" id="delete-product-button"> MASS DELETE</button>,
-                        <Link to="/products_assignment/add-product" state={{ skus: this.state.skus }}><button type="button"> ADD</button></Link>
+                        <Link to="/products_assignment/add-product" state={{ skus: this.state.skus }}>
+                            <button type="button"> ADD </button>
+                        </Link>
+                        <button onClick={this.MassDeleteHandler} type="button" id="delete-product-button"> MASS DELETE </button>,
                     </div>
                 </div>
                 <div className='productContainer'>
