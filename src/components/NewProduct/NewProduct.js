@@ -84,7 +84,6 @@ const NewProduct = props => {
             {
                 navigate('/products_assignment');
             }
-            console.log(res)
         })
     }
 
