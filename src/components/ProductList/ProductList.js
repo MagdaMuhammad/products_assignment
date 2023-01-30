@@ -74,7 +74,7 @@ class ProductList extends Component {
                     <ul>
                         { this.state.products.length !==0 ? 
                             this.state.products.map( product => <Product key={product.SKU} product={product} onCheck={this.checkboxChangeHandler} /> ) :
-                            <p> There are no products to show </p>
+                            <p className='empty'> There are no products to show </p>
                         }
                     </ul>
                 </div>
