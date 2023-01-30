@@ -66,17 +66,21 @@ const NewProduct = props => {
             return;
         }
 
-        let newProduct = {
-            SKU: SKUInput,
-            name: nameInput, 
-            price: priceInput,
-            type: typeInput,
-            size: sizeInput,
-            height: heightInput,
-            width: widthInput,
-            length: lengthInput,
-            weight: weightInput
-        };
+        // let newProduct = {
+        //     SKU: SKUInput,
+        //     name: nameInput, 
+        //     price: priceInput,
+        //     type: typeInput,
+        //     size: sizeInput,
+        //     height: heightInput,
+        //     width: widthInput,
+        //     length: lengthInput,
+        //     weight: weightInput
+        // };
+
+        let newProduct ="SKU="+SKUInput+"&name="+nameInput+"&price="+priceInput+"&type="+typeInput+"&size="+sizeInput+
+        "&height="+heightInput+"&width="+widthInput+"&length="+lengthInput+"&weight="+weightInput;
+        console.log(newProduct)
 
         ProductAPI.addProduct(newProduct)
         .then((res) => {
