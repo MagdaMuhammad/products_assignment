@@ -65,9 +65,13 @@ class ProductList extends Component {
                     <h2>Products List</h2>
                     <div className="buttonSet">
                         <Link to="/products_assignment/add-product" state={{ skus: this.state.skus }}>
-                            <button type="button" name='ADD' id="ADD" > ADD </button>
+                            <button type="button"> 
+                                ADD 
+                            </button>
                         </Link>
-                        <button onClick={this.MassDeleteHandler} type="button" id="delete-product-btn" name='MASS DELETE'> MASS DELETE </button>
+                        <button onClick={this.MassDeleteHandler} type="button" id="delete-product-btn">
+                            MASS DELETE 
+                        </button>
                     </div>
                 </div>
                 <div className='productContainer'>
