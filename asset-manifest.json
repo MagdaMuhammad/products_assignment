@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/products_assignment/static/css/main.229ed936.css",
-    "main.js": "/products_assignment/static/js/main.d3566c6c.js",
+    "main.js": "/products_assignment/static/js/main.e1f7286a.js",
     "static/media/pexels-suzy-hazelwood-1629236.jpg": "/products_assignment/static/media/pexels-suzy-hazelwood-1629236.4ac83561b7c05286dff6.jpg",
     "index.html": "/products_assignment/index.html",
     "main.229ed936.css.map": "/products_assignment/static/css/main.229ed936.css.map",
-    "main.d3566c6c.js.map": "/products_assignment/static/js/main.d3566c6c.js.map"
+    "main.e1f7286a.js.map": "/products_assignment/static/js/main.e1f7286a.js.map"
   },
   "entrypoints": [
     "static/css/main.229ed936.css",
-    "static/js/main.d3566c6c.js"
+    "static/js/main.e1f7286a.js"
   ]
 }
