@@ -17,3 +17,54 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1rem auto;
+    max-width: 95%;
+    border-bottom: 3px solid #dcdecc;
+    padding: 0.25rem 1rem;
+}
+  
+.header h2{
+    margin: 1rem 0;
+    color: beige;
+}
+
+.buttonSet{
+    align-self: flex-end;
+    margin: auto 0;
+}
+
+button{
+    padding: 0.5rem;
+    border-radius: 10px;
+    color: white;
+    background-color: #a8617a;
+    border: thin solid #4b2029;
+    margin: 0 1rem;
+    font-family: 'Handlee', cursive;
+    cursor: pointer;
+}
+
+button:hover{
+    box-shadow: 1px 1px white ;
+}
+
+.cancelBtn{
+    background-color: #e899b5;
+}
+
+@media only screen and (width > 500px) {
+    .header{
+        flex-direction: row;
+        padding: 0 1rem;
+        margin: 2rem auto;
+    }
+
+    .header h2{
+        font-size: xx-large;
+    }
+}
+

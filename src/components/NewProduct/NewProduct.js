@@ -4,7 +4,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import * as ProductAPI from '../ProductAPI';
 
 import './NewProduct.css';
-import Header from '../UI/Header';
+// import Header from '../UI/Header';
 import Error from '../UI/Error';
 
 
@@ -91,17 +91,30 @@ const NewProduct = props => {
         setError(null);
     }
 
-    const buttons = [
-        {button: <button onClick={saveNewProductHandler} type="submit" value="save"> Save</button>},
-        {button: <Link to="/products_assignment"><button type="button" className='cancelBtn' value="cancel"> Cancel</button></Link>}
-    ]    
+    // const buttons = [
+    //     {button: <button onClick={saveNewProductHandler} type="submit" value="save"> Save</button>},
+    //     {button: <Link to="/products_assignment"><button type="button" className='cancelBtn' value="cancel"> Cancel</button></Link>}
+    // ]    
 
     return(
         <>
             { error && <Error title={error.title} errorMSG={error.msg} clickHandler={errorHandler} />}
 
             <form id="product_form">
-                <Header title="Add New Product" buttons={buttons} />
+                {/* <Header title="Add New Product" buttons={buttons} /> */}
+                <div className='header'>
+                    <h2>Add New Product</h2>
+                    <div className="buttonSet">
+                        <button onClick={saveNewProductHandler} type="submit" value="save"> 
+                            Save
+                        </button>
+                        <Link to="/products_assignment">
+                            <button type="button" className='cancelBtn' value="cancel"> 
+                                Cancel
+                            </button>
+                        </Link>
+                    </div>
+                </div>
                 <div className='form-container'>
                     <div className='form-section-input'>
                         <label>SKU</label>

@@ -24,7 +24,7 @@ button{
     color: white;
     background-color: #a8617a;
     border: thin solid #4b2029;
-    margin: 0 0.25rem;
+    margin: 0 1rem;
     font-family: 'Handlee', cursive;
     cursor: pointer;
 }
